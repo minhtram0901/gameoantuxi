@@ -3,6 +3,7 @@ import "../assets/css/index.css";
 import Computer from "./computer";
 import Player from "./player";
 import Result from "./result";
+import { connect } from "react-redux";
 
 class OanTuXi extends Component {
   render() {
@@ -14,8 +15,15 @@ class OanTuXi extends Component {
               <Player />
             </div>
             <div className="col-4 text-center">
-              <Result/>
-              <button className="btn-play mt-5">PLAY GAME</button>
+              <Result />
+              <button
+                className="btn-play mt-5"
+                onClick={() => {
+                  this.props.playGame();
+                }}
+              >
+                PLAY GAME
+              </button>
             </div>
             <div className="col-4">
               <Computer />
@@ -27,4 +35,26 @@ class OanTuXi extends Component {
   }
 }
 
-export default OanTuXi;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    /**
+     * key: value
+     * -key: đại diện cho tên props
+     * -value: là 1 phương thức
+     */
+    playGame: () => {
+      let count = 10;
+      let computerPlay = setInterval(() => {
+        dispatch({
+          type: "RANDOM",
+        });
+        count--;
+        if (count === 0) {
+          clearInterval(computerPlay);
+        }
+      }, 150);
+    },
+  };
+};
+
+export default connect(null, mapDispatchToProps)(OanTuXi);
