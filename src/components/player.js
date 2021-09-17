@@ -12,7 +12,6 @@ class Player extends Component {
     if (!thinking) {
       thinking = {};
       thinking.hinhAnh = this.props.playOption[0].hinhAnh;
-      thinking.ma = this.props.playOption[0].ma;
     }
     return (
       <div className="player">
@@ -21,7 +20,7 @@ class Player extends Component {
             className="thinking"
             style={{ width: 100, height: 100 }}
             src={thinking.hinhAnh}
-            alt={thinking.ma}
+            alt={thinking.hinhAnh}
           />
         </div>
         <div className="pointerA"></div>
@@ -50,7 +49,7 @@ class Player extends Component {
                 <img
                   style={{ width: 50, height: 50 }}
                   src={item.hinhAnh}
-                  alt={item.ma}
+                  alt={item.hinhAnh}
                 />
               </button>
             );

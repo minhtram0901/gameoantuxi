@@ -5,11 +5,8 @@ class Computer extends Component {
   render() {
     let keyframe = `
       @keyframes randomItem${Date.now()}{
-        0% {left: 25px}
-        25% {left: 85px}
-        50% {left: 25px}
-        75% {left: 85px}
-        100% {left:0}
+        0% {left: 15px}
+        50% {left: 95px}
       }
     `;
     return (
@@ -21,10 +18,10 @@ class Computer extends Component {
             style={{
               width: 100,
               height: 100,
-              animation: `randomItem${Date.now()} 0.5s`,
+              animation: `randomItem${Date.now()} 0.3s`,
             }}
             src={this.props.computerPlay.hinhAnh}
-            alt={this.props.computerPlay.ma}
+            alt={this.props.computerPlay.hinhAnh}
           />
         </div>
         <div className="pointerB"></div>

@@ -7,7 +7,7 @@ class Result extends Component {
             <div className="result">
                 <div className="main-text">{this.props.result}</div>
                  {/*Draw game  */}
-                <div className="sub-text mt-3">number of wins: {this.props.wins}</div>
+                <div className="sub-text mt-3">number of wins: {this.props.win}</div>
                 <div className="sub-text">number of games played: {this.props.played}</div>
             </div>
         )
@@ -22,7 +22,7 @@ const mapStateToProps = (state) => {
        * -value: lấy giá trị từ rootReducer
        */
        result: state.gameReducer.result,
-       wins: state.gameReducer.wins,
+       win: state.gameReducer.win,
        played: state.gameReducer.played,
     };
   };

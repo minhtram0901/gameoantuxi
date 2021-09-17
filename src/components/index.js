@@ -51,8 +51,11 @@ const mapDispatchToProps = (dispatch) => {
         count--;
         if (count === 0) {
           clearInterval(computerPlay);
+          dispatch({
+            type: "ENDGAME",
+          });
         }
-      }, 150);
+      }, 100);
     },
   };
 };
