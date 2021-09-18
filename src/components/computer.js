@@ -39,11 +39,6 @@ class Computer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    /**
-     * key: value
-     * -key: đại diện cho tên props
-     * -value: lấy giá trị từ rootReducer
-     */
     computerPlay: state.gameReducer.computerPlay,
   };
 };

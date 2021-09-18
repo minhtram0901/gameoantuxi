@@ -62,29 +62,17 @@ class Player extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    /**
-     * key: value
-     * -key: đại diện cho tên props
-     * -value: lấy giá trị từ rootReducer
-     */
     playOption: state.gameReducer.playOption,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    /**
-     * key: value
-     * -key: đại diện cho tên props
-     * -value: là 1 phương thức
-     */
     makeDecision: (playOption) => {
-      //  Tao action
       const action = {
         type: "PLAYER-DECISION",
         payload: playOption ,
       };
-      // Gửi action vào store
       dispatch(action);
     },
   };

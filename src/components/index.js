@@ -37,11 +37,6 @@ class OanTuXi extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    /**
-     * key: value
-     * -key: đại diện cho tên props
-     * -value: là 1 phương thức
-     */
     playGame: () => {
       let count = 10;
       let computerPlay = setInterval(() => {
